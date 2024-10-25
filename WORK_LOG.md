@@ -1,9 +1,9 @@
-Name: YOUR NAME HERE
+Name: Sabrina Vohra
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date  |      Time       |                                                                                       Update |
+|:------|:---------------:|---------------------------------------------------------------------------------------------:|
+| 10/25 | 11:30 - 11:55am | I thought through the problem in-class with what kind of objects to use and opened the file. |
+|       |                 |                                                                                              |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
