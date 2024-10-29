@@ -14,9 +14,11 @@ public class Finder {
     private static final String INVALID = "INVALID KEY";
 
     public Finder() {}
-
+    // Map
+    int map[] = new int[];
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
+
         // Create map for each new added key with its value attached--use Array as map?
             // Create hash map based on key and corresponding value--index of map leads to value?--more efficient Array
             // because the values will be too large to store in this way? create smaller hashes?
@@ -27,6 +29,14 @@ public class Finder {
 
     public String query(String key){
         // TODO: Complete the query() function!
+        // Create hash function
+        int hashKey = new key.hashCode();
+        for(int i = 0; i < map.length; i++) {
+            // Compare each hashed value in map to key's hashed value
+            if(map[i] == key) {
+                return key;
+            }
+        }
         // Look through map to find any possible matches--make sure map makes value easy to find with access to key
         // If not in map / hash map:
             // return invalid
