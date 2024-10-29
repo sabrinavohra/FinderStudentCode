@@ -10,14 +10,20 @@ import java.io.IOException;
  **/
 
 public class Finder {
-
     private static final String INVALID = "INVALID KEY";
+    private static final int RADIX = 123;
+    private static final int PRIME = 506683;
 
     public Finder() {}
-    // Map
-    int map[] = new int[];
+
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
+
+        // Map
+        int map[] = new int[];
+        // For each space in array / each key:
+            // Create hash and assign it (make the key traceable)
+
 
         // Create map for each new added key with its value attached--use Array as map?
             // Create hash map based on key and corresponding value--index of map leads to value?--more efficient Array
@@ -29,11 +35,10 @@ public class Finder {
 
     public String query(String key){
         // TODO: Complete the query() function!
-        // Create hash function
-        int hashKey = new key.hashCode();
+        int hashKey = hash(key);
         for(int i = 0; i < map.length; i++) {
             // Compare each hashed value in map to key's hashed value
-            if(map[i] == key) {
+            if(map[i] == hashKey) {
                 return key;
             }
         }
@@ -41,5 +46,14 @@ public class Finder {
         // If not in map / hash map:
             // return invalid
         return INVALID;
+    }
+
+    // Basic hash method
+    public int hash(String key) {
+        int hash = 0;
+        for(int i = 0; i < key.length(); i++) {
+            hash =(hash * RADIX + key.charAt(i) % PRIME);
+        }
+        return hash;
     }
 }
