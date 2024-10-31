@@ -24,6 +24,10 @@ public class Finder {
         // For each space in array / each key:
             // Create hash and assign it (make the key traceable)
 
+        // Assign index by hashing (find index depending on value at [keyCol][valCol]) to original value
+        for(int i = 0; i < keyCol; i++) {
+            map[i] = keyCol;
+        }
 
         // Create map for each new added key with its value attached--use Array as map?
             // Create hash map based on key and corresponding value--index of map leads to value?--more efficient Array
