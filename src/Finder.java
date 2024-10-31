@@ -11,7 +11,9 @@ import java.io.IOException;
 
 public class Finder {
     private static final String INVALID = "INVALID KEY";
+    // ASCII for all lower and uppercase letters
     private static final int RADIX = 123;
+    // big prime
     private static final int PRIME = 506683;
 
     public Finder() {}
@@ -26,6 +28,7 @@ public class Finder {
 
         // Assign index by hashing (find index depending on value at [keyCol][valCol]) to original value
         for(int i = 0; i < keyCol; i++) {
+            // Use hashes as the input for the Array
             map[i] = keyCol;
         }
 
