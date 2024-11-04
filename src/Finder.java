@@ -15,43 +15,33 @@ public class Finder {
     private static final int RADIX = 123;
     // big prime
     private static final int PRIME = 506683;
-
+    private static final int BEG_SIZE = 100;
+    private int[] map = new int[BEG_SIZE];
+    private int current = 0;
+    private int mapSize = 100;
     public Finder() {}
+
 
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
-
-        // Map
-        int map[] = new int[];
-        // For each space in array / each key:
-            // Create hash and assign it (make the key traceable)
-
-        // Assign index by hashing (find index depending on value at [keyCol][valCol]) to original value
-        for(int i = 0; i < keyCol; i++) {
-            // Use hashes as the input for the Array
-            map[i] = keyCol;
+        current++;
+        if(current > mapSize/2) {
+            mapSize = mapSize * 2;
         }
-
-        // Create map for each new added key with its value attached--use Array as map?
-            // Create hash map based on key and corresponding value--index of map leads to value?--more efficient Array
-            // because the values will be too large to store in this way? create smaller hashes?
-            // How to organize map? Values cannot be too big and must be easily recognizable
-        // Every time adding, search map for that key first and make sure not match before adding to map at correct spot
-        br.close();
+        map[current] = keyCol;
     }
 
     public String query(String key){
         // TODO: Complete the query() function!
-        int hashKey = hash(key);
-        for(int i = 0; i < map.length; i++) {
-            // Compare each hashed value in map to key's hashed value
-            if(map[i] == hashKey) {
-                return key;
+        int unhash = 0;
+        for(int i = 0; i < key.length(); i++) {
+            unhash = (unhash / RADIX - key.charAt(i) % PRIME);
+        }
+        for(int i = 0; i < mapSize; i++) {
+            if(unhash == map[i]) {
+                return map[i];
             }
         }
-        // Look through map to find any possible matches--make sure map makes value easy to find with access to key
-        // If not in map / hash map:
-            // return invalid
         return INVALID;
     }
 
