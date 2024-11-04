@@ -1,5 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
+
+import static java.util.Objects.hash;
+
 /**
  * Finder
  * A puzzle written by Zach Blick
@@ -11,36 +14,29 @@ import java.io.IOException;
 
 public class Finder {
     private static final String INVALID = "INVALID KEY";
-    private static final int RADIX = 123;
-    private static final int PRIME = 506683;
-    private static final int BEG_SIZE = 100;
-    private int[] map = new int[BEG_SIZE];
-    private int current = 0;
-    private int mapSize = 100;
+    private HashMap newMap;
+    private HashMap keyValMap;
+
     public Finder() {}
 
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
-        HashMap map = new HashMap();
-        map.add(br.readLine(keyCol), br.readLine(valCol));
-        current++;
-        if(current > mapSize/2) {
-            mapSize = mapSize * 2;
+        newMap = new HashMap();
+        String line = br.readLine();
+        while(line != null) {
+            String[] split = line.split(",");
+            newMap.add(split[keyCol], split[valCol]);
+            //keyValMap.add(split[keyCol], split[keyCol]);
+            line = br.readLine();
         }
-        map[current] = keyCol;
     }
 
     public String query(String key){
         // TODO: Complete the query() function!
-        int unhash = 0;
-        for(int i = 0; i < key.length(); i++) {
-            unhash = (unhash / RADIX - key.charAt(i) % mapSize);
+        String returns = newMap.get(key);
+        if(returns == null) {
+            return INVALID;
         }
-        for(int i = 0; i < mapSize; i++) {
-            if(unhash == map[i]) {
-                return map[i];
-            }
-        }
-        return INVALID;
+        return returns;
     }
 }
