@@ -11,9 +11,7 @@ import java.io.IOException;
 
 public class Finder {
     private static final String INVALID = "INVALID KEY";
-    // ASCII for all lower and uppercase letters
     private static final int RADIX = 123;
-    // big prime
     private static final int PRIME = 506683;
     private static final int BEG_SIZE = 100;
     private int[] map = new int[BEG_SIZE];
@@ -21,7 +19,7 @@ public class Finder {
     private int mapSize = 100;
     public Finder() {}
 
-
+    // How to find String value???
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
         current++;
