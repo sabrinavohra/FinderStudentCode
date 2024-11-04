@@ -19,9 +19,10 @@ public class Finder {
     private int mapSize = 100;
     public Finder() {}
 
-    // How to find String value???
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
+        HashMap map = new HashMap();
+        map.add(br.readLine(keyCol), br.readLine(valCol));
         current++;
         if(current > mapSize/2) {
             mapSize = mapSize * 2;
@@ -33,7 +34,7 @@ public class Finder {
         // TODO: Complete the query() function!
         int unhash = 0;
         for(int i = 0; i < key.length(); i++) {
-            unhash = (unhash / RADIX - key.charAt(i) % PRIME);
+            unhash = (unhash / RADIX - key.charAt(i) % mapSize);
         }
         for(int i = 0; i < mapSize; i++) {
             if(unhash == map[i]) {
@@ -41,14 +42,5 @@ public class Finder {
             }
         }
         return INVALID;
-    }
-
-    // Basic hash method
-    public int hash(String key) {
-        int hash = 0;
-        for(int i = 0; i < key.length(); i++) {
-            hash =(hash * RADIX + key.charAt(i) % PRIME);
-        }
-        return hash;
     }
 }
