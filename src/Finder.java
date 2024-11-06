@@ -34,7 +34,7 @@ public class Finder {
     public String query(String key){
         // TODO: Complete the query() function!
         String returns = newMap.get(key);
-        if(returns == null) {
+        if(returns == "INVALID") {
             return INVALID;
         }
         return returns;

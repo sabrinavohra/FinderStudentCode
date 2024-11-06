@@ -10,7 +10,8 @@ Name: Sabrina Vohra
 | 10/30 |  11:25 - 11:50pm  |                                                      I continued implementing the code from the comments I had written and writing <br/>more in-depth comments for the areas in which I was struggling. |
 | 11/3  |  10:50 - 11:15pm  | I started working on the hash map with linear probing solution by using the pseudocode on the slides. I'm struggling with figuring out how to convert the keyCol versus valCol and how to convert back. |
 | 11/4  |  12:50 - 1:15pm   |                     I worked on my solution by making the HashMap class and the methods within it. I'm struggling to implement buildTable() and trying to figure out how to read the lines of the file. |
-| 11/4  |   1:15 - 1:40pm   |                                                          I worked through my problem and have all the right methods, but seem to have a problem with query() that is leading to an out-of-bounds error. |
+| 11/4  |   1:15 - 1:40pm   |                                                          I worked through my problem and have all the right methods, but seem to have a problem with query() that is leading to an out of bounds error. |
+| 11/5  |  10:30 - 10:45pm  |                                                                                                   I worked on debugging the HashMap get(), add(), and resize() methods to avoid an out of bounds error. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
