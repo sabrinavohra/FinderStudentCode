@@ -16,7 +16,6 @@ import static java.util.Objects.hash;
 public class Finder {
     private static final String INVALID = "INVALID KEY";
     private HashMap newMap;
-    private HashMap keyValMap;
 
     public Finder() {}
 
@@ -27,7 +26,6 @@ public class Finder {
         while(line != null) {
             String[] split = line.split(",");
             newMap.add(split[keyCol], split[valCol]);
-            //keyValMap.add(split[keyCol], split[keyCol]);
             line = br.readLine();
         }
     }

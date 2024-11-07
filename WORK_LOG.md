@@ -13,6 +13,7 @@ Name: Sabrina Vohra
 | 11/4  |   1:15 - 1:40pm   |                                                          I worked through my problem and have all the right methods, but seem to have a problem with query() that is leading to an out of bounds error. |
 | 11/5  |  10:30 - 10:45pm  |                                                                                                   I worked on debugging the HashMap get(), add(), and resize() methods to avoid an out of bounds error. |
 | 11/7  |  10:05 - 10:20am  |                                                             I worked to make the code more efficient, with Mr. Blick's help. The code now runs without error, but I'm working on making the keys match. |
+| 11/7  |  10:20 - 10:40am  |                      Some of the test cases are working, while some are timing out and others are receiving an out of bounds error. I think some of the code is too slow and am approaching that issue. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

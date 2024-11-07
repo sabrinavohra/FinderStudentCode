@@ -26,7 +26,7 @@ public class HashMap {
         for(int i = 0; i < keyValMap.length; i++) {
             if(keyValMap[i] != null) {
                 if(keyValMap[i].equals(key)) {
-                    return keyValMap[i];
+                    return map[i];
                 }
             }
         }
@@ -36,7 +36,7 @@ public class HashMap {
 
     public void add(String key, String value) {
         numKeys++;
-        if(numKeys > (tableSize / 2)) {
+        if(numKeys > (tableSize/2)) {
             resize();
         }
         int hashed = hash(key);
@@ -61,21 +61,14 @@ public class HashMap {
                 newHash = hash(keyValMap[i]);
                 while(newMap[newHash] != null) {
                     newHash++;
+                    if(newHash == newMap.length) {
+                        newHash = 0;
+                    }
                 }
             }
             newMap[newHash] = map[i];
             newKeyValMap[newHash] = keyValMap[i];
         }
-        /* for(int i = 0; i < keyValMap.length; i++) {
-            int newHash = 0;
-            if(keyValMap[i] != null) {
-                newHash = hash(keyValMap[i]);
-                while(newKeyValMap[newHash] != null) {
-                    newHash++;
-                }
-            }
-            newKeyValMap[newHash] = keyValMap[i];
-        } */
         map = newMap;
         keyValMap = newKeyValMap;
     }
