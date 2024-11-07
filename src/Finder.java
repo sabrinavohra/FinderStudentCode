@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Objects;
 
 import static java.util.Objects.hash;
 
@@ -34,7 +35,7 @@ public class Finder {
     public String query(String key){
         // TODO: Complete the query() function!
         String returns = newMap.get(key);
-        if(returns == "INVALID") {
+        if(Objects.equals(returns, "INVALID")) {
             return INVALID;
         }
         return returns;

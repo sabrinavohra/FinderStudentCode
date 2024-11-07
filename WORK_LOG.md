@@ -12,6 +12,7 @@ Name: Sabrina Vohra
 | 11/4  |  12:50 - 1:15pm   |                     I worked on my solution by making the HashMap class and the methods within it. I'm struggling to implement buildTable() and trying to figure out how to read the lines of the file. |
 | 11/4  |   1:15 - 1:40pm   |                                                          I worked through my problem and have all the right methods, but seem to have a problem with query() that is leading to an out of bounds error. |
 | 11/5  |  10:30 - 10:45pm  |                                                                                                   I worked on debugging the HashMap get(), add(), and resize() methods to avoid an out of bounds error. |
+| 11/7  |  10:05 - 10:20am  |                                                             I worked to make the code more efficient, with Mr. Blick's help. The code now runs without error, but I'm working on making the keys match. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
