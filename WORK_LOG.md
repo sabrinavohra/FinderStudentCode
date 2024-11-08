@@ -18,6 +18,7 @@ Name: Sabrina Vohra
 | 11/7  |   9:20 - 9:40pm   |                                                       I worked on debugging the code within my methods to speed it up and looked at an individual problem with a key mismatch in the testStocks() test. |
 | 11/7  |  10:10 - 10:40pm  |                                                                                                                                   I worked through solving the testStocks() problem and wrote comments. |
 | 11/8  |   8:20 - 8:45am   |                                                                                                                                  I rethought the get() method and am now working on the mismatch error. |
+| 11/8  |   9:05 - 9:10am   |                                                                                                                  I messed with the default table size and radix to find a pair that made the code work! |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

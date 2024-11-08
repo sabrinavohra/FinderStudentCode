@@ -1,8 +1,8 @@
 import java.util.Objects;
 public class HashMap {
     // Initializes default size of table
-    private static final int BEG_SIZE = 16;
-    private static final int RADIX = 257;
+    private static final int BEG_SIZE = 43;
+    private static final int RADIX = 43;
     private int tableSize;
     private String[] map;
     private String[] keyValMap;
@@ -20,22 +20,22 @@ public class HashMap {
     public int hash(String key) {
         int hash = 0;
         for(int i = 0; i < key.length(); i++) {
-            hash = ((hash * RADIX + key.charAt(i)) % tableSize);
+            hash = ((hash * RADIX + key.charAt(i)) % (tableSize));
         }
         return hash;
     }
 
     // Method returns the value associated with a key
     public String get(String key) {
+        // Checks map location for key
         int newHash = hash(key);
-        if(keyValMap[newHash] != null) {
-            if(keyValMap[newHash].equals(key)) {
-                return map[newHash];
-            }
+        if( keyValMap[newHash] != null && keyValMap[newHash].equals(key)) {
+            return map[newHash];
         }
+        // Moves through map until key is found
         else {
             while(keyValMap[newHash] != null) {
-                if(newHash == tableSize) {
+                if(newHash == tableSize - 1) {
                     newHash = -1;
                 }
                 if(keyValMap[newHash].equals(key)) {
@@ -57,14 +57,10 @@ public class HashMap {
         // Hashes key and adds to map, if possible
         int hashed = hash(key);
         while(map[hashed] != null) {
-            /* if(map[hashed].equals(value)) {
-                map[hashed] = value;
-                return;
-            } */
             // Increases hashed if the spot is already taken in the map
             hashed++;
             // Makes sure hashed doesn't go out of bounds of the map
-            if(hashed == tableSize) {
+            if(hashed == tableSize - 1) {
                 hashed = 0;
             }
         }
