@@ -18,23 +18,27 @@ public class Finder {
     private HashMap newMap;
 
     public Finder() {}
+    // Method creates a table using the csv file
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
-        // TODO: Complete the buildTable() function!
+        // Creates a new map corresponding to the values by reading through the file
         newMap = new HashMap();
         String line = br.readLine();
         while(line != null) {
+            // Splits each section of line up by comma
             String[] split = line.split(",");
             newMap.add(split[keyCol], split[valCol]);
+            // Advances to read the next line
             line = br.readLine();
         }
     }
 
+    // Method returns the String associated with the key, if it's in the map
     public String query(String key){
-        // TODO: Complete the query() function!
-        String returns = newMap.get(key);
-        if(Objects.equals(returns, "INVALID")) {
+        String value = newMap.get(key);
+        // Checks if String is in the map
+        if(Objects.equals(value, "INVALID")) {
             return INVALID;
         }
-        return returns;
+        return value;
     }
 }
