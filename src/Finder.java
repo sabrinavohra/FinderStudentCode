@@ -18,7 +18,6 @@ public class Finder {
     private HashMap newMap;
 
     public Finder() {}
-
     public void buildTable(BufferedReader br, int keyCol, int valCol) throws IOException {
         // TODO: Complete the buildTable() function!
         newMap = new HashMap();

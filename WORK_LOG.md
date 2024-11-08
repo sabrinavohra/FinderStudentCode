@@ -15,6 +15,7 @@ Name: Sabrina Vohra
 | 11/7  |  10:05 - 10:20am  |                                                             I worked to make the code more efficient, with Mr. Blick's help. The code now runs without error, but I'm working on making the keys match. |
 | 11/7  |  10:20 - 10:40am  |                      Some of the test cases are working, while some are timing out and others are receiving an out of bounds error. I think some of the code is too slow and am approaching that issue. |
 | 11/7  |   8:30 - 8:45pm   |                                                                                                                                I tried to figure out where the tests may be timing out without success. |
+| 11/7  |   9:20 - 9:40pm   |                                                       I worked on debugging the code within my methods to speed it up and looked at an individual problem with a key mismatch in the testStocks() test. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

@@ -31,12 +31,11 @@ public class HashMap {
             }
         }
         return "INVALID";
-
     }
 
     public void add(String key, String value) {
         numKeys++;
-        if(numKeys > (tableSize/2)) {
+        if(numKeys >= (tableSize / 2)) {
             resize();
         }
         int hashed = hash(key);
@@ -50,7 +49,6 @@ public class HashMap {
         keyValMap[hashed] = key;
     }
 
-    // Issue with resize and not accounting for keyValMap??
     public void resize() {
         tableSize = tableSize * 2;
         String[] newMap = new String[tableSize];
