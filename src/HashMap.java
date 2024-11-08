@@ -1,7 +1,7 @@
 import java.util.Objects;
 public class HashMap {
    private static final int BEG_SIZE = 16;
-   private static final int RADIX = 123;
+   private static final int RADIX = 257;
    private int tableSize;
    private String[] map;
    private String[] keyValMap;
