@@ -27,7 +27,6 @@ public class Finder {
             // Splits each section of line up by comma
             String[] split = line.split(",");
             newMap.add(split[keyCol], split[valCol]);
-            // Advances to read the next line
             line = br.readLine();
         }
     }

@@ -66,15 +66,11 @@ public class HashMap {
 
     // Method resizes the map when the number of keys reaches greater than half of the map size
     public void resize() {
-        // Increase table size
-        // Create new versions of maps
-        // Rehash each value and add to map
-        // Add key value to keyValMap at the same point as the hashed value
         tableSize = tableSize * 2;
         // Creates new maps as placeholders to re-hash values
         String[] newMap = new String[tableSize];
         String[] newKeyValMap = new String[tableSize];
-        // Re-hashes each value and adds to map--follows same process as adding
+        // Re-hashes each value and adds to map--follows the same process as adding
         for(int i = 0; i < map.length; i++) {
             int newHash = 0;
             if(keyValMap[i] != null) {
