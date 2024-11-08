@@ -9,7 +9,7 @@ public class HashMap {
     private int numKeys;
 
     public HashMap() {
-        // Initializes table for values and keys
+        // Initializes tables for values and keys
         map = new String[BEG_SIZE];
         keyValMap = new String[BEG_SIZE];
         tableSize = BEG_SIZE;
@@ -20,25 +20,34 @@ public class HashMap {
     public int hash(String key) {
         int hash = 0;
         for(int i = 0; i < key.length(); i++) {
-            hash =((hash * RADIX + key.charAt(i)) % tableSize);
+            hash = ((hash * RADIX + key.charAt(i)) % tableSize);
         }
         return hash;
     }
 
-    // Method returns the key associated with a value
+    // Method returns the value associated with a key
     public String get(String key) {
-        // Checks each part of map for key and returns associated value using value map
-        for(int i = 0; i < keyValMap.length; i++) {
-            if(keyValMap[i] != null) {
-                if(keyValMap[i].equals(key)) {
-                    return map[i];
+        int newHash = hash(key);
+        if(keyValMap[newHash] != null) {
+            if(keyValMap[newHash].equals(key)) {
+                return map[newHash];
+            }
+        }
+        else {
+            while(keyValMap[newHash] != null) {
+                if(newHash == tableSize) {
+                    newHash = -1;
                 }
+                if(keyValMap[newHash].equals(key)) {
+                    return map[newHash];
+                }
+                newHash++;
             }
         }
         return "INVALID";
     }
 
-    // Method adds a key and value to the map
+    // Method adds a key and its corresponding value to the map
     public void add(String key, String value) {
         numKeys++;
         // Resizes table, if necessary
@@ -48,14 +57,14 @@ public class HashMap {
         // Hashes key and adds to map, if possible
         int hashed = hash(key);
         while(map[hashed] != null) {
-            /*if(map[hashed].equals(value)) {
+            /* if(map[hashed].equals(value)) {
                 map[hashed] = value;
                 return;
             } */
             // Increases hashed if the spot is already taken in the map
             hashed++;
             // Makes sure hashed doesn't go out of bounds of the map
-            if(hashed == tableSize - 1) {
+            if(hashed == tableSize) {
                 hashed = 0;
             }
         }
@@ -70,7 +79,7 @@ public class HashMap {
         // Creates new maps as placeholders to re-hash values
         String[] newMap = new String[tableSize];
         String[] newKeyValMap = new String[tableSize];
-        // Re-hashes each value and adds to map--follows the same process as adding
+        // Re-hashes each value and adds to map--follows the same checks as adding
         for(int i = 0; i < map.length; i++) {
             int newHash = 0;
             if(keyValMap[i] != null) {
